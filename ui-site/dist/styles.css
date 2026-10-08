@@ -354,3 +354,14 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .thanks-count { margin:18px 0; padding:10px; color:var(--navy); background:#eef8fa; border-radius:9px; font-size:13px; }
 .thanks-count strong { color:var(--cyan); font-size:24px; margin-right:3px; }
 @media (max-width:760px) { .live-window-head small { display:none; } .live-record { grid-template-columns:112px 102px 1fr; gap:6px; font-size:11px; } .thanks-dialog { padding:26px 20px 20px; } }
+.icon-btn { width:34px; height:34px; display:inline-grid; place-items:center; padding:0; border:1px solid rgba(255,255,255,.35); border-radius:9px; color:#fff; background:rgba(255,255,255,.08); font-size:18px; line-height:1; cursor:pointer; }
+.icon-btn:hover { background:rgba(255,255,255,.18); }
+.contact-modal { position:fixed; inset:0; z-index:55; display:none; place-items:center; padding:20px; background:rgba(12,31,52,.55); backdrop-filter:blur(3px); }
+.contact-modal.show { display:grid; }
+.contact-dialog { position:relative; width:min(390px,100%); padding:28px 26px 24px; text-align:center; border-radius:16px; background:#fff; box-shadow:0 24px 70px rgba(10,36,64,.28); }
+.contact-close { position:absolute; top:8px; right:12px; border:0; background:transparent; color:var(--muted); font-size:24px; cursor:pointer; }
+.contact-icon { width:48px; height:48px; display:grid; place-items:center; margin:0 auto 9px; border-radius:50%; color:#fff; background:var(--cyan); font-size:24px; }
+.contact-dialog h2 { margin-bottom:6px; color:var(--navy); }
+.contact-dialog p { margin:5px 0 12px; color:var(--muted); font-size:14px; }
+.contact-email { color:var(--navy); font-weight:800; text-decoration:none; word-break:break-all; }
+.contact-email:hover { text-decoration:underline; }
