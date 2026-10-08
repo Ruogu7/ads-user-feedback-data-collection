@@ -78,6 +78,13 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .survey-body { padding: 28px 30px; }
 .section-panel { display: none; }
 .section-panel.active { display: block; animation: rise .24s ease-out; }
+.admin-section { display: none; }
+.admin-section.active { display: block; animation: rise .24s ease-out; }
+.admin-section .panel h2 { margin: 20px 0 8px; }
+.admin-section .panel h2:first-child { margin-top: 0; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.team-grid article { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #fbfdff; }
+@media (max-width: 800px) { .team-grid { grid-template-columns: 1fr; } }
 @keyframes rise { from { opacity: .55; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 .question { padding: 20px 0; border-bottom: 1px solid #edf0f4; }
 .question:first-of-type { padding-top: 8px; }
