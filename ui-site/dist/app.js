@@ -42,4 +42,5 @@
   const introClean=document.querySelector('#introView');if(introClean){introClean.querySelector('.feature-list')?.remove();[...introClean.querySelectorAll('p')].filter(p=>/^最后/.test((p.textContent||'').trim())).forEach(p=>p.remove());}
   const audienceNote=document.querySelector('#introView .moved-audience');const introActions=document.querySelector('#introView .intro-actions');if(audienceNote&&introActions){audienceNote.remove();introActions.parentNode.insertBefore(audienceNote,introActions);}
   const introNotice=document.querySelector('#introView .notice-grid div:nth-child(3) p');if(introNotice)introNotice.innerHTML='主答卷默认不收集姓名、手机号和邮箱；<br>如需接收调研报告，可在自愿回访模块选择邮件联系。';document.querySelector('#introView .moved-audience')?.remove();
+  document.querySelector('#surveyView .survey-head .eyebrow')?.remove();
 })();
