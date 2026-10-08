@@ -236,3 +236,23 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .matrix-label { grid-column:1/-1; font-size:13px; color:var(--muted); }
 .matrix-cell select { width:100%; padding:7px; border:1px solid var(--line); border-radius:7px; }
 @media (max-width:760px) { .matrix-grid { grid-template-columns:minmax(150px,1.4fr) repeat(6,100px); } .top-actions .prototype-tag { display:none; } .q-label { font-size:15px; } }
+.hidden { display:none !important; }
+.intro-view { padding:8px 4px 10px; }
+.intro-view h1 { margin:8px 0 10px; color:var(--navy); }
+.intro-view .lead { font-size:18px; color:var(--muted); max-width:850px; }
+.report-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+.report-cards article { border:1px solid var(--line); border-radius:14px; padding:18px; background:linear-gradient(145deg,#fff,#f4fbfc); min-height:190px; }
+.report-cards h2 { font-size:18px; margin:10px 0 8px; color:var(--navy); }
+.report-cards p { margin:0; color:var(--muted); font-size:14px; }
+.report-index { display:inline-grid; place-items:center; width:34px; height:34px; border-radius:10px; background:var(--cyan-soft); color:var(--cyan); font-weight:800; }
+.intro-callout { border-left:4px solid var(--cyan); background:var(--cyan-soft); padding:14px 16px; border-radius:8px; color:var(--navy); margin:18px 0 22px; }
+.btn-wide { min-width:220px; }
+.feature-list { display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin:18px 0; padding:16px; border:1px solid var(--line); border-radius:12px; background:#f8fbfd; }
+.feature-list span { padding:5px 10px; border-radius:999px; background:#e7f8fa; color:#176d7b; font-size:13px; }
+.notice-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:20px 0; }
+.notice-grid > div { padding:15px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+.notice-grid b { color:var(--navy); }
+.notice-grid p { margin:7px 0 0; color:var(--muted); font-size:14px; }
+.intro-actions { display:flex; justify-content:space-between; gap:12px; margin-top:24px; }
+.preface-card .progress-track,.preface-card #progressText,.preface-card .step-list { opacity:.35; }
+@media (max-width:760px) { .report-cards,.notice-grid { grid-template-columns:1fr; } .report-cards article { min-height:auto; } .intro-actions { flex-direction:column-reverse; } .intro-actions .btn,.btn-wide { width:100%; } }
