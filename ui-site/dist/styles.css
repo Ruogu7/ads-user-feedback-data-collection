@@ -225,3 +225,14 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.q-label { display:block; font-weight:700; line-height:1.55; }
+.q-label small { display:block; color:var(--muted); font-size:12px; font-weight:500; margin-top:3px; }
+.q-id { color:var(--navy); font-variant-numeric:tabular-nums; margin-right:6px; }
+.text-input { width:100%; border:1px solid var(--line); border-radius:10px; padding:11px 12px; margin-top:12px; background:#fff; }
+.matrix-grid { display:grid; grid-template-columns:minmax(170px,2fr) repeat(6,minmax(90px,1fr)); gap:1px; margin-top:12px; border:1px solid var(--line); background:var(--line); overflow:auto; }
+.matrix-grid > * { background:#fff; padding:10px 8px; min-width:90px; }
+.matrix-head { font-weight:700; font-size:12px; color:var(--navy); }
+.matrix-label { grid-column:1/-1; font-size:13px; color:var(--muted); }
+.matrix-cell select { width:100%; padding:7px; border:1px solid var(--line); border-radius:7px; }
+@media (max-width:760px) { .matrix-grid { grid-template-columns:minmax(150px,1.4fr) repeat(6,100px); } .top-actions .prototype-tag { display:none; } .q-label { font-size:15px; } }

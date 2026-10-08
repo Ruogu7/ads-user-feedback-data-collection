@@ -1,45 +1,27 @@
 (() => {
-  const panels = [...document.querySelectorAll('.section-panel')];
-  const stepButtons = [...document.querySelectorAll('#stepList button')];
-  const progressFill = document.querySelector('#progressFill');
-  const progressText = document.querySelector('#progressText');
-  const mobileStep = document.querySelector('#mobileStep');
-  const mobilePct = document.querySelector('#mobilePct');
-  const prevBtn = document.querySelector('#prevBtn');
-  const nextBtn = document.querySelector('#nextBtn');
-  const saveState = document.querySelector('#saveState');
-  const toast = document.querySelector('#toast');
-  let step = 0;
-
-  function render() {
-    panels.forEach((panel, index) => panel.classList.toggle('active', index === step));
-    stepButtons.forEach((button, index) => button.classList.toggle('active', index === step));
-    const pct = Math.round(((step + 1) / panels.length) * 100);
-    const answered = Math.min(61, Math.round(61 * pct / 100));
-    progressFill.style.width = `${pct}%`;
-    progressText.textContent = `已完成 ${answered} / 61 题`;
-    mobileStep.textContent = `第 ${step + 1} 部分 · ${panels[step].dataset.title}`;
-    mobilePct.textContent = `${pct}%`;
-    prevBtn.disabled = step === 0;
-    prevBtn.style.opacity = step === 0 ? '.45' : '1';
-    nextBtn.textContent = step === panels.length - 1 ? '提交问卷' : '保存并继续';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function pulseSaved() {
-    saveState.textContent = '保存中…';
-    window.setTimeout(() => { saveState.textContent = '✓ 已自动保存到本机'; }, 420);
-  }
-
-  nextBtn.addEventListener('click', () => {
-    pulseSaved();
-    if (step < panels.length - 1) { step += 1; render(); return; }
-    toast.classList.add('show');
-    window.setTimeout(() => toast.classList.remove('show'), 2200);
-  });
-
-  prevBtn.addEventListener('click', () => { if (step > 0) { step -= 1; render(); } });
-  stepButtons.forEach((button) => button.addEventListener('click', () => { step = Number(button.dataset.step); render(); }));
-  document.querySelector('#surveyForm').addEventListener('change', pulseSaved);
-  render();
+  const sections = [
+    ['个人背景与驾驶经验', ['您的性别是？','您的年龄是？','您的学习与工作专业领域是？','您长期居住的地区是？（仅填写省、市）','过去12个月，您大约驾驶了多少里程（单位：公里）？','您经常（大于70%）面对哪些驾驶场景？']],
+    ['当前车辆与购车情况', ['当前所述的车辆，来自：','当前所述的车辆，品牌及首次购买年份是？','该车具备哪些智驾功能？','购车时，哪些因素最重要？请最多选5项，并再标出其中前3名。']],
+    ['智驾认知、培训与使用', ['您主要从哪些渠道了解智驾？','您接受过哪些使用培训？','过去12个月，您在以下场景使用相关功能的频率如何？','如果您很少或不使用智驾，主要原因是？']],
+    ['功能需求与品牌偏好', ['未来一辆车最需要的3类智驾功能是什么？请恰好选择3项并排序。']],
+    ['AI赋能路径与效果', ['您预期AI在以下路径上能给智能驾驶带来多大提升？','根据您的实际体验，AI在以下路径上已经带来多大提升？','您预期智能驾驶最终会在以下结果上产生多大正向效果？','根据过去12个月的实际体验，智能驾驶在以下结果上的效果如何？','什么证据最能证明AI确实改善了智驾？最多选3项。']],
+    ['功能障碍与事件', ['过去12个月，您是否遇到过智驾功能障碍、明显不便或安全风险？','您遇到过哪些类型的问题？可多选。','上述哪一类对您的使用影响最大？','过去12个月，这类问题大约发生多频繁？','这些问题给您带来哪些影响？','您是否愿意回忆最近一次事件并继续回答以下问题？','该事件大约发生在什么时候？','当时正在使用哪项功能？','事发场景有哪些？','请用不超过200字描述发生了什么。','事件前，系统是否给出足够清晰、及时的提示？','您采取了什么措施？','该事件最严重的实际后果是？','您向哪些渠道反馈过？','问题最终是否得到解决？','您认为该事件的主要原因是？','事件后，您对该系统的信任怎样变化？','如果同类问题再次发生，您最需要的支持是？最多选3项。']],
+    ['安全、信任与购买意向', ['请评价您对以下陈述的同意程度。','与您自己手动驾驶相比，您认为当前量产高阶智驾的总体安全水平是？','在哪些场景，能够放心交由智驾系统来行驶？','哪些证据最能建立您对智驾安全的信任？最多选3项。','若某智驾系统通过政府认可的独立测试，并连续3年公开真实道路安全数据，您的购买意愿会怎样变化？']],
+    ['全生命周期价值与期待', ['使用智驾后，下列项目相对没有智驾时发生了怎样的变化？','您期望车企至少提供多少年智驾软件、安全修复和云服务支持？','如果5年内因算力或传感器代际导致核心功能无法升级，这会多大程度影响您的购买？','哪些因素最可能导致智驾汽车价值下降？最多选3项。','哪些保障最能提高长期价值？最多选5项。']],
+    ['政府监管、行业治理与政策期待', ['您对智驾行业的哪些问题感到困惑？最多选3项。','您对以下政策或行业措施的支持程度是？','您认为最紧迫的3项措施是？','现阶段，您更支持哪种总体监管节奏？','扩大L3/L4应用范围前，您认为至少应满足哪些条件？最多选3项。','为公共安全监测，您愿意分享到什么程度的车辆数据？','您最信任谁发布智驾安全和质量信息？最多选2项。','对于“保证安全”和“促进创新”之间的平衡，您还有什么具体建议？']],
+    ['总体评价与开放意见', ['如果只能选一项，您购买智驾汽车最大的顾虑是？','什么变化最可能让您提高购买意愿？','您最希望车企停止或改进哪一种做法？']],
+    ['自愿回访（与主答卷分表保存）', ['您是否愿意接受后续回访？','您是否同意按照上述用途、期限和次数保存并使用联系方式？']]
+  ];
+  const multi = new Set(['Q06','Q09','Q10','Q11','Q12','Q14','Q15','Q20','Q22','Q25','Q29','Q32','Q34','Q38','Q41','Q42','Q47','Q48','Q49','Q51','Q53','Q55']);
+  const matrix = new Set(['Q13','Q17','Q18','Q19','Q39','Q44','Q50']);
+  const text = new Set(['Q04','Q08','Q30','Q56','Q58','Q59']);
+  const options = ['没有/不适用','很少','有时','经常','无法判断','安全性与可靠性','功能体验','价格与成本','品牌口碑','售后与OTA','隐私与网络安全','其他'];
+  let n=0; const qdata=[]; sections.forEach(([title,qs])=>{const items=qs.map(label=>{n++;const id='Q'+String(n).padStart(2,'0');const type=text.has(id)?'text':matrix.has(id)?'matrix':multi.has(id)?'multi':'single';qdata.push({id,label,type});return{id,label,type};});});
+  const body=document.querySelector('#surveyBody'), stepList=document.querySelector('#stepList');
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function renderQ(q){const req=!['Q30','Q56','Q58','Q59','Q60'].includes(q.id)||q.id==='Q61';let h=`<div class="question" data-question="${q.id}"><div class="q-label"><span class="q-id">${q.id}</span> ${esc(q.label)} ${req?'<span class="required">*</span>':''}<small>${q.type==='multi'?'可多选':q.type==='matrix'?'矩阵单选':q.type==='text'?'开放题，可选':''}</small></div>`;if(q.type==='text')h+=q.id==='Q30'||q.id==='Q56'||q.id==='Q58'||q.id==='Q59'?`<textarea name="${q.id}" maxlength="200" rows="4" placeholder="请填写您的真实看法（不超过200字）"></textarea>`:`<input class="text-input" name="${q.id}" placeholder="请输入省、市或品牌/年份">`;else if(q.type==='matrix')h+=`<div class="matrix-grid">${['陈述/项目','非常不同意/无改善','不同意/略有改善','一般/无变化','同意/有所改善','非常同意/明显改善','无法判断'].map(x=>`<span class="matrix-head">${x}</span>`).join('')}<span class="matrix-label">请逐项选择最符合您体验的选项</span><span class="matrix-cell"><select name="${q.id}"><option value="">请选择</option>${options.slice(0,6).map(x=>`<option>${x}</option>`).join('')}</select></span></div>`;else h+=`<div class="option-grid">${options.map(x=>`<label class="choice"><input type="${q.type==='single'?'radio':'checkbox'}" name="${q.id}" value="${esc(x)}">${esc(x)}</label>`).join('')}</div>`;return h+'</div>';}
+  let qi=0; const panels=[]; sections.forEach(([title,qs],si)=>{const p=document.createElement('section');p.className='section-panel';p.dataset.title=title;const items=qdata.slice(qi,qi+qs.length);qi+=qs.length;p.innerHTML=`<h2>${si+1}. ${title}</h2><p class="muted small">${si===5?'如未经历相关事件，可选择“没有”或“无法判断”；事件追问仅用于有经历的受访者。':si===10?'联系方式仅在您自愿回访且同意时单独保存。':'请根据真实体验作答，题目旁的提示说明了适用人群和选择方式。'}</p>${items.map(renderQ).join('')}`;body.appendChild(p);panels.push(p);const li=document.createElement('li');li.innerHTML=`<button type="button" data-step="${si}"><span class="step-num">${si+1}</span>${title}</button>`;stepList.appendChild(li);});
+  let step=0;const fill=document.querySelector('#progressFill'),pt=document.querySelector('#progressText'),ms=document.querySelector('#mobileStep'),mp=document.querySelector('#mobilePct'),prev=document.querySelector('#prevBtn'),next=document.querySelector('#nextBtn'),save=document.querySelector('#saveState'),toast=document.querySelector('#toast');
+  function draw(){panels.forEach((p,i)=>p.classList.toggle('active',i===step));[...stepList.querySelectorAll('button')].forEach((b,i)=>b.classList.toggle('active',i===step));const pct=Math.round((step+1)/panels.length*100);fill.style.width=pct+'%';pt.textContent=`已完成 ${Math.round(step/panels.length*61)} / 61 题`;ms.textContent=`第 ${step+1} 部分 · ${panels[step].dataset.title}`;mp.textContent=pct+'%';prev.disabled=step===0;next.textContent=step===panels.length-1?'提交问卷':'保存并继续';window.scrollTo({top:0,behavior:'smooth'});}
+  function saved(){save.textContent='保存中…';setTimeout(()=>save.textContent='✓ 已自动保存到本机',350);}next.onclick=()=>{saved();if(step<panels.length-1){step++;draw();}else{toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2500);}};prev.onclick=()=>{if(step){step--;draw();}};stepList.onclick=e=>{const b=e.target.closest('button');if(b){step=+b.dataset.step;draw();}};document.querySelector('#surveyForm').onchange=saved;draw();
 })();
