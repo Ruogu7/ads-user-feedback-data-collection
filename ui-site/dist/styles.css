@@ -390,3 +390,6 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .visitor-city-widget a:hover { text-decoration:underline; }
 .visitor-city-widget iframe,.visitor-city-widget img { max-width:145px !important; max-height:30px !important; }
 @media (max-width:760px) { .landing-title-row { align-items:flex-start; gap:8px; } .visitor-city-widget { min-width:120px; max-width:135px; padding:3px 5px; font-size:9px; } }
+.visitor-city-widget { min-width:220px; max-width:none; min-height:80px; max-height:none; height:auto; overflow:visible; flex-shrink:0; }
+.visitor-city-widget iframe,.visitor-city-widget img,.visitor-city-widget canvas,.visitor-city-widget object { max-width:none !important; max-height:none !important; }
+@media (max-width:760px) { .visitor-city-widget { min-width:180px; max-width:calc(100vw - 32px); min-height:80px; } }
