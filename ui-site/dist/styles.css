@@ -384,8 +384,9 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 @media (max-width:760px) { .home-map-row { grid-template-columns:1fr; gap:8px; } .home-map-tile img { height:220px; } }
 .landing-title-row { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:4px; }
 .landing-title-row > h1 { margin-bottom:0; }
-.visitor-city-widget { min-width:190px; min-height:44px; display:flex; align-items:center; justify-content:center; gap:7px; padding:6px 10px; border:1px solid #cfe3e8; border-radius:10px; background:#f6fbfc; color:var(--navy); font-size:11px; overflow:hidden; }
+.visitor-city-widget { min-width:150px; max-width:165px; min-height:34px; max-height:38px; display:flex; align-items:center; justify-content:center; gap:5px; padding:4px 7px; border:1px solid #cfe3e8; border-radius:8px; background:#f6fbfc; color:var(--navy); font-size:10px; overflow:hidden; }
 .visitor-city-widget .visitor-city-label { color:var(--muted); white-space:nowrap; }
 .visitor-city-widget a { color:var(--cyan); text-decoration:none; white-space:nowrap; }
 .visitor-city-widget a:hover { text-decoration:underline; }
-@media (max-width:760px) { .landing-title-row { align-items:flex-start; gap:8px; } .visitor-city-widget { min-width:145px; padding:5px 7px; font-size:10px; } }
+.visitor-city-widget iframe,.visitor-city-widget img { max-width:145px !important; max-height:30px !important; }
+@media (max-width:760px) { .landing-title-row { align-items:flex-start; gap:8px; } .visitor-city-widget { min-width:120px; max-width:135px; padding:3px 5px; font-size:9px; } }
