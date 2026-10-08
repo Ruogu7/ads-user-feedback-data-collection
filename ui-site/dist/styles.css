@@ -133,6 +133,7 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .admin-title { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 22px; }
 .admin-title h1 { margin-bottom: 3px; }
 .admin-tools { display: flex; gap: 10px; flex-wrap: wrap; }
+.record-actions { justify-content: flex-end; margin-bottom: 12px; }
 .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
 .kpi { padding: 18px; box-shadow: none; }
 .kpi span { color: var(--muted); font-size: 13px; }
