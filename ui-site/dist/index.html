@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="智能驾驶汽车用户使用体验调研问卷普通用户端响应式界面原型">
+  <title>智驾体验调研 用户端</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23183b66'/%3E%3Cpath d='M13 37c4-14 10-21 19-21s15 7 19 21' fill='none' stroke='%234cc7d3' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='40' r='5' fill='white'/%3E%3Ccircle cx='42' cy='40' r='5' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">ADS</div>
+      <div><strong>智能驾驶体验调研</strong><small>AI赋能智驾汽车研究课题</small></div>
+    </div>
+    <div class="top-actions">
+      <span class="prototype-tag">交互原型 · 模拟数据</span>
+      <a class="btn btn-ghost" href="admin.html">管理员端</a>
+    </div>
+  </header>
+
+  <main class="shell survey-layout">
+    <aside class="card side-card" aria-label="问卷进度">
+      <div class="mobile-nav"><strong id="mobileStep">第 1 部分</strong><span class="small muted" id="mobilePct">16%</span></div>
+      <h3>填写进度</h3>
+      <div class="progress-track" aria-label="完成进度"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="small muted" style="margin:8px 0 0"><span id="progressText">已完成 10 / 61 题</span></p>
+      <ol class="step-list" id="stepList">
+        <li><button class="active" data-step="0"><span class="step-num">1</span>个人与驾驶经验</button></li>
+        <li><button data-step="1"><span class="step-num">2</span>车辆与智驾使用</button></li>
+        <li><button data-step="2"><span class="step-num">3</span>风险事件回忆</button></li>
+        <li><button data-step="3"><span class="step-num">4</span>信任与长期价值</button></li>
+        <li><button data-step="4"><span class="step-num">5</span>治理与开放意见</button></li>
+        <li><button data-step="5"><span class="step-num">6</span>确认并提交</button></li>
+      </ol>
+    </aside>
+
+    <section class="card survey-main" aria-live="polite">
+      <div class="survey-head">
+        <span class="eyebrow">普通用户端</span>
+        <h1>智能驾驶汽车用户调研问卷</h1>
+        <p class="muted">预计用时 12–15 分钟。请按过去 12 个月的真实体验填写；带 <span class="required">*</span> 的问题为必答。</p>
+      </div>
+
+      <form id="surveyForm">
+        <div class="survey-body">
+          <section class="section-panel active" data-title="个人与驾驶经验">
+            <h2>个人背景与驾驶经验</h2>
+            <p class="muted small">仅用于群体统计，不收集精确地址。</p>
+            <div class="question">
+              <div class="q-label">Q01 您的性别是？ <span class="required">*</span></div>
+              <div class="option-grid">
+                <label class="choice"><input type="radio" name="gender">男</label>
+                <label class="choice"><input type="radio" name="gender">女</label>
+                <label class="choice"><input type="radio" name="gender">不回答</label>
+              </div>
+            </div>
+            <div class="question">
+              <div class="q-label">Q02 您的年龄是？ <span class="required">*</span></div>
+              <div class="option-grid">
+                <label class="choice"><input type="radio" name="age">18–26 岁</label>
+                <label class="choice"><input type="radio" name="age">27–32 岁</label>
+                <label class="choice"><input type="radio" name="age">33–36 岁</label>
+                <label class="choice"><input type="radio" name="age">37–45 岁</label>
+                <label class="choice"><input type="radio" name="age">46 岁及以上</label>
+              </div>
+            </div>
+            <div class="question">
+              <div class="q-label">Q04 您长期居住的地区是？</div>
+              <div class="field-row">
+                <select aria-label="省份"><option>请选择省份</option><option>北京市</option><option>广东省</option><option>湖北省</option><option>上海市</option></select>
+                <select aria-label="城市"><option>请选择城市</option><option>北京</option><option>广州</option><option>武汉</option><option>上海</option></select>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-panel" data-title="车辆与智驾使用">
+            <h2>车辆与智驾使用</h2>
+            <p class="muted small">可多选的问题会显示对应提示。</p>
+            <div class="question">
+              <div class="q-label">Q09 该车具备哪些智驾功能？</div>
+              <div class="option-grid">
+                <label class="choice"><input type="checkbox">自动紧急制动</label>
+                <label class="choice"><input type="checkbox">自适应巡航</label>
+                <label class="choice"><input type="checkbox">高速领航辅助</label>
+                <label class="choice"><input type="checkbox">城市领航辅助</label>
+                <label class="choice"><input type="checkbox">自动或记忆泊车</label>
+                <label class="choice"><input type="checkbox">驾驶员监测</label>
+              </div>
+            </div>
+            <div class="question">
+              <div class="q-label">Q13 过去 12 个月，您使用相关功能的频率如何？</div>
+              <div class="matrix-wrap">
+                <table class="matrix">
+                  <thead><tr><th>使用场景</th><th>从不</th><th>很少</th><th>有时</th><th>经常</th><th>无此功能</th></tr></thead>
+                  <tbody>
+                    <tr><td>高速或快速路巡航</td><td><input type="radio" name="m1"></td><td><input type="radio" name="m1"></td><td><input type="radio" name="m1"></td><td><input type="radio" name="m1"></td><td><input type="radio" name="m1"></td></tr>
+                    <tr><td>城市普通道路辅助</td><td><input type="radio" name="m2"></td><td><input type="radio" name="m2"></td><td><input type="radio" name="m2"></td><td><input type="radio" name="m2"></td><td><input type="radio" name="m2"></td></tr>
+                    <tr><td>自动泊车</td><td><input type="radio" name="m3"></td><td><input type="radio" name="m3"></td><td><input type="radio" name="m3"></td><td><input type="radio" name="m3"></td><td><input type="radio" name="m3"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-panel" data-title="风险事件回忆">
+            <h2>风险事件回忆</h2>
+            <p class="muted small">如果没有相关经历，可直接选择“没有”。</p>
+            <div class="question">
+              <div class="q-label">Q21 过去 12 个月，您是否遇到过功能障碍、明显不便或安全风险？</div>
+              <div class="option-grid">
+                <label class="choice"><input type="radio" name="incident">没有</label>
+                <label class="choice"><input type="radio" name="incident">有轻微不便</label>
+                <label class="choice"><input type="radio" name="incident">有明显功能问题</label>
+                <label class="choice"><input type="radio" name="incident">有安全险情或碰撞</label>
+              </div>
+            </div>
+            <div class="question">
+              <div class="q-label">Q30 请用不超过 200 字描述最近一次事件</div>
+              <textarea rows="5" maxlength="200" placeholder="请描述功能、道路场景、系统提示和您的处置方式……"></textarea>
+              <div class="privacy-note"><span aria-hidden="true">🔒</span><div><b>请勿填写可识别信息</b><br><span class="small">不要填写车牌、姓名、手机号或精确地址。</span></div></div>
+            </div>
+          </section>
+
+          <section class="section-panel" data-title="信任与长期价值">
+            <h2>信任与长期价值</h2>
+            <div class="question">
+              <div class="q-label">Q39 请评价您对以下陈述的同意程度</div>
+              <div class="matrix-wrap">
+                <table class="matrix">
+                  <thead><tr><th>陈述</th><th>非常不同意</th><th>不同意</th><th>一般</th><th>同意</th><th>非常同意</th></tr></thead>
+                  <tbody>
+                    <tr><td>智能驾驶能提升日常出行安全性</td><td><input type="radio" name="t1"></td><td><input type="radio" name="t1"></td><td><input type="radio" name="t1"></td><td><input type="radio" name="t1"></td><td><input type="radio" name="t1"></td></tr>
+                    <tr><td>我能判断系统何时处于工作状态</td><td><input type="radio" name="t2"></td><td><input type="radio" name="t2"></td><td><input type="radio" name="t2"></td><td><input type="radio" name="t2"></td><td><input type="radio" name="t2"></td></tr>
+                    <tr><td>独立评测比品牌宣传更影响我的判断</td><td><input type="radio" name="t3"></td><td><input type="radio" name="t3"></td><td><input type="radio" name="t3"></td><td><input type="radio" name="t3"></td><td><input type="radio" name="t3"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-panel" data-title="治理与开放意见">
+            <h2>治理与开放意见</h2>
+            <div class="question">
+              <div class="q-label">Q52 现阶段，您更支持哪种总体监管节奏？</div>
+              <div class="option-grid">
+                <label class="choice"><input type="radio" name="policy">严格限制，待技术成熟再开放</label>
+                <label class="choice"><input type="radio" name="policy">小范围试点，达标后分阶段扩大</label>
+                <label class="choice"><input type="radio" name="policy">在安全底线下加快开放</label>
+                <label class="choice"><input type="radio" name="policy">不确定</label>
+              </div>
+            </div>
+            <div class="question">
+              <div class="q-label">Q59 您最希望车企停止或改进哪一种做法？</div>
+              <textarea rows="4" placeholder="例如：夸大宣传、功能命名、OTA、订阅、维修或数据处理……"></textarea>
+            </div>
+          </section>
+
+          <section class="section-panel" data-title="确认并提交">
+            <h2>确认并提交</h2>
+            <p>感谢您的参与。提交前，请确认以下事项：</p>
+            <div class="soft-card" style="padding:16px">
+              <label class="choice"><input type="checkbox">我已检查必答题，并确认内容基于本人真实体验。</label>
+              <label class="choice" style="margin-top:10px"><input type="checkbox">我了解主答卷不保存姓名、手机号和邮箱。</label>
+            </div>
+            <div class="privacy-note"><span aria-hidden="true">✓</span><div><b>联系方式与主答卷分表保存</b><br><span class="small">只有自愿接受回访时才会单独收集，且可随时撤回同意。</span></div></div>
+          </section>
+        </div>
+
+        <footer class="survey-footer">
+          <button class="btn btn-secondary" type="button" id="prevBtn">上一步</button>
+          <span class="save-state" id="saveState">✓ 已自动保存到本机</span>
+          <button class="btn btn-primary" type="button" id="nextBtn">保存并继续</button>
+        </footer>
+      </form>
+    </section>
+
+    <aside class="info-stack" aria-label="填写帮助">
+      <section class="card info-card"><h3>隐私保护</h3><p class="small muted">主答卷不收集姓名、手机号和邮箱；开放题会提示避免输入可识别信息。</p></section>
+      <section class="card info-card"><h3>当前问卷</h3><div class="metric-mini"><div><strong>61</strong><span class="small muted">规整后题目</span></div><div><strong>12–15</strong><span class="small muted">预计分钟</span></div></div></section>
+      <section class="card info-card"><h3>填写建议</h3><ul><li>按过去 12 个月体验回答</li><li>不确定时选择“无法判断”</li><li>矩阵题可横向滚动查看</li></ul></section>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status">原型已模拟提交</div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="智能驾驶汽车用户调研问卷管理员端响应式界面原型">
+  <title>智驾体验调研 管理员端</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23183b66'/%3E%3Cpath d='M13 37c4-14 10-21 19-21s15 7 19 21' fill='none' stroke='%234cc7d3' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='40' r='5' fill='white'/%3E%3Ccircle cx='42' cy='40' r='5' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark" aria-hidden="true">ADS</div><div><strong>调研数据管理中心</strong><small>智能驾驶体验研究</small></div></div>
+    <div class="top-actions"><span class="prototype-tag">交互原型 · 模拟数据</span><a class="btn btn-ghost" href="index.html">查看用户端</a></div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-profile"><div class="avatar">研</div><div><strong style="color:#fff">研究管理员</strong><div class="small">项目数据权限</div></div></div>
+      <nav class="admin-nav" aria-label="管理功能">
+        <button class="active">数据总览</button><button>答卷记录</button><button>问卷版本</button><button>字段管理</button><button>导出任务</button><button>权限与日志</button>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-title">
+        <div><span class="eyebrow">管理员端</span><h1>数据总览</h1><p class="muted">统计口径：当前发布版本 · 截至 2026-10-08 14:30</p></div>
+        <div class="admin-tools"><button class="btn btn-secondary" id="fieldBtn">＋ 补充字段</button><button class="btn btn-primary" id="exportBtn">导出数据</button></div>
+      </div>
+
+      <section class="kpi-grid" aria-label="关键指标">
+        <article class="card kpi"><span>累计提交</span><strong>102,486</strong><div class="delta">近 30 天 +8.7%</div></article>
+        <article class="card kpi"><span>有效答卷</span><strong>96,314</strong><div class="delta">有效率 94.0%</div></article>
+        <article class="card kpi"><span>风险事件记录</span><strong>18,729</strong><div class="delta">占有效答卷 19.4%</div></article>
+        <article class="card kpi"><span>待复核记录</span><strong>326</strong><div class="delta" style="color:#a36a08">今日新增 41</div></article>
+      </section>
+
+      <section class="dash-grid">
+        <article class="card panel">
+          <div class="panel-head"><h2>月度累计记录</h2><select style="width:auto" aria-label="统计周期"><option>最近 8 个月</option></select></div>
+          <div class="chart" aria-label="月度累计记录柱状图">
+            <div class="bar" data-label="3月" style="height:25%"></div><div class="bar" data-label="4月" style="height:34%"></div><div class="bar" data-label="5月" style="height:42%"></div><div class="bar" data-label="6月" style="height:53%"></div><div class="bar" data-label="7月" style="height:64%"></div><div class="bar" data-label="8月" style="height:72%"></div><div class="bar" data-label="9月" style="height:86%"></div><div class="bar" data-label="10月" style="height:98%"></div>
+          </div>
+        </article>
+        <article class="card panel">
+          <div class="panel-head"><h2>答卷状态构成</h2><span class="small muted">模拟</span></div>
+          <div class="donut-wrap"><div class="donut" aria-label="完成率 78.4%"></div><div class="legend"><span><i style="background:#183b66"></i>完整提交 78.4%</span><span><i style="background:#16a3b6"></i>部分完成 12.5%</span><span><i style="background:#f59e0b"></i>待复核 6.0%</span><span><i style="background:#cbd5e1"></i>其他 3.1%</span></div></div>
+        </article>
+      </section>
+
+      <section class="card panel records">
+        <div class="panel-head"><div><h2>答卷记录</h2><div class="small muted">主答卷与回访联系方式分表展示</div></div><button class="btn btn-secondary">批量操作</button></div>
+        <div class="filters">
+          <input class="input search" id="searchInput" placeholder="搜索答卷编号、地区或品牌" aria-label="搜索记录">
+          <select aria-label="答卷状态"><option>全部状态</option><option>有效</option><option>待复核</option></select>
+          <select aria-label="风险等级"><option>全部风险</option><option>无风险</option><option>安全险情</option></select>
+          <select aria-label="地区"><option>全部地区</option><option>北京市</option><option>广东省</option><option>湖北省</option></select>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>答卷编号</th><th>提交时间</th><th>地区</th><th>车辆品牌</th><th>风险事件</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody id="recordBody">
+              <tr><td>RSP-104862</td><td>10-08 14:21</td><td>湖北 · 武汉</td><td>品牌 A</td><td>明显功能问题</td><td><span class="status review">待复核</span></td><td><button class="link-btn view-record">查看</button></td></tr>
+              <tr><td>RSP-104861</td><td>10-08 14:18</td><td>广东 · 深圳</td><td>品牌 D</td><td>没有</td><td><span class="status done">有效</span></td><td><button class="link-btn view-record">查看</button></td></tr>
+              <tr><td>RSP-104860</td><td>10-08 14:09</td><td>北京</td><td>品牌 B</td><td>安全险情</td><td><span class="status risk">重点关注</span></td><td><button class="link-btn view-record">查看</button></td></tr>
+              <tr><td>RSP-104859</td><td>10-08 13:55</td><td>上海</td><td>品牌 F</td><td>轻微不便</td><td><span class="status done">有效</span></td><td><button class="link-btn view-record">查看</button></td></tr>
+              <tr><td>RSP-104858</td><td>10-08 13:47</td><td>浙江 · 杭州</td><td>品牌 C</td><td>没有</td><td><span class="status done">有效</span></td><td><button class="link-btn view-record">查看</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination"><span>显示 1–5，共 102,486 条</span><div><button class="btn btn-secondary" style="min-height:34px;padding:4px 10px">上一页</button> <button class="btn btn-secondary" style="min-height:34px;padding:4px 10px">下一页</button></div></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" role="dialog" aria-modal="true" aria-label="答卷详情">
+    <aside class="drawer">
+      <div class="drawer-head"><div><span class="eyebrow">答卷详情</span><h2 style="margin:2px 0">RSP-104862</h2></div><button class="icon-btn" id="closeDrawer" aria-label="关闭">×</button></div>
+      <div class="detail-grid"><div><small>提交时间</small><strong>2026-10-08 14:21</strong></div><div><small>记录状态</small><span class="status review">待复核</span></div><div><small>地区</small><strong>湖北 · 武汉</strong></div><div><small>问卷版本</small><strong>V1.0</strong></div></div>
+      <h3>最近一次风险事件</h3>
+      <p class="muted">城市高架汇入区域使用领航辅助时，车辆两次取消变道，随后提示接管。驾驶员接管后正常驶离，无碰撞及财产损失。</p>
+      <label class="small muted" for="reviewNote">复核备注</label><textarea id="reviewNote" rows="4" placeholder="仅管理员可见"></textarea>
+      <div class="drawer-actions"><button class="btn btn-primary" id="saveReview">保存复核</button><button class="btn btn-secondary">标记为有效</button></div>
+    </aside>
+  </div>
+  <div class="toast" id="adminToast" role="status"></div>
+  <script src="admin.js"></script>
+</body>
+</html>

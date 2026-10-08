@@ -1,0 +1,7 @@
+.work/
+*.docx
+*.pdf
+*.msi
+__pycache__/
+*.py[cod]
+
