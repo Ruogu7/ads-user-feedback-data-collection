@@ -44,4 +44,5 @@
   const introNotice=document.querySelector('#introView .notice-grid div:nth-child(3) p');if(introNotice)introNotice.innerHTML='主答卷默认不收集姓名、手机号和邮箱；<br>如需接收调研报告，可在自愿回访模块选择邮件联系。';document.querySelector('#introView .moved-audience')?.remove();
   document.querySelector('#surveyView .survey-head .eyebrow')?.remove();
   document.querySelector('#surveyView .survey-head > p')?.remove();
+  document.querySelector('a[href="admin.html"]')?.remove();const liveHeading=document.querySelector('#liveWindow .live-window-head strong');if(liveHeading)liveHeading.textContent='最新数据';const scopeParagraph=[...document.querySelectorAll('#introView p')].find((p)=>p.textContent.includes('课题问卷调查范围包括'));if(scopeParagraph&&!document.querySelector('#validityNotice')){const notice=document.createElement('p');notice.id='validityNotice';notice.textContent='所有提交的数据，须经确认有效后，才纳入统计、分析、显示。';scopeParagraph.insertAdjacentElement('afterend',notice);}
 })();
