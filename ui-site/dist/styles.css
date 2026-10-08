@@ -134,6 +134,7 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .admin-title h1 { margin-bottom: 3px; }
 .admin-tools { display: flex; gap: 10px; flex-wrap: wrap; }
 .record-actions { justify-content: flex-end; margin-bottom: 12px; }
+.admin-tools .btn, .filters .btn { min-height: 34px; padding: 6px 12px; }
 .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
 .kpi { padding: 18px; box-shadow: none; }
 .kpi span { color: var(--muted); font-size: 13px; }
@@ -155,7 +156,7 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .filters { display: grid; grid-template-columns: minmax(220px, 1.5fr) repeat(3, minmax(130px, .6fr)); gap: 10px; margin: 14px 0; }
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
 .data-table { border-collapse: collapse; width: 100%; min-width: 920px; font-size: 14px; }
-.data-table th, .data-table td { padding: 13px 14px; border-bottom: 1px solid #e9edf2; text-align: left; white-space: nowrap; }
+.data-table th, .data-table td { padding: 8px 10px; border-bottom: 1px solid #e9edf2; text-align: left; white-space: nowrap; }
 .data-table th { color: #516273; background: #f4f7fa; font-size: 12px; letter-spacing: .02em; }
 .data-table tr:hover td { background: #f8fcfd; }
 .status { display: inline-flex; padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 750; }
