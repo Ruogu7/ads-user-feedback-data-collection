@@ -374,4 +374,11 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .home-map { margin:12px 0 14px; padding:10px 14px 6px; border:1px solid #d7e8ed; border-radius:12px; background:#fbfdfe; text-align:center; }
 .home-map img { display:block; width:100%; height:clamp(260px,36vh,430px); object-fit:contain; }
 .home-map figcaption { margin-top:4px; color:var(--navy); font-size:13px; font-weight:800; }
+.home-map-row { display:grid; grid-template-columns:1.15fr 1fr 1fr; gap:10px; align-items:stretch; margin:12px 0 14px; }
+.home-map-tile { min-width:0; margin:0; padding:8px 8px 6px; border:1px solid #d7e8ed; border-radius:12px; background:#fbfdfe; text-align:center; }
+.home-map-tile img { display:block; width:100%; height:clamp(220px,30vh,350px); object-fit:contain; }
+.home-map-tile figcaption { margin-top:4px; color:var(--navy); font-size:13px; font-weight:800; }
+.centered-tile { justify-self:center; width:100%; }
+.right-tile { justify-self:end; width:100%; }
 @media (max-width:760px) { .live-window-head { padding:8px 9px; gap:0; } .live-window-head strong { font-size:12px; } .live-record { grid-template-columns:104px 90px 1fr; padding:0 8px; } }
+@media (max-width:760px) { .home-map-row { grid-template-columns:1fr; gap:8px; } .home-map-tile img { height:220px; } }

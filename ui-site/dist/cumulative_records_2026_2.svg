@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">2026年4月至10月累积记录总数</title>
+  <desc id="desc">折线图显示累积记录总数从4月的10增长到10月的106。</desc>
+  <rect width="640" height="480" fill="#ffffff"/>
+
+  <text x="320" y="34" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="20" font-weight="700" fill="#1f2937">累积记录总数</text>
+  <text x="320" y="57" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">2026年4月—10月</text>
+
+  <!-- Plot area: x=72..610, y=82..405; y-axis 0..120 -->
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="72" y1="405" x2="610" y2="405"/>
+    <line x1="72" y1="351.17" x2="610" y2="351.17"/>
+    <line x1="72" y1="297.33" x2="610" y2="297.33"/>
+    <line x1="72" y1="243.50" x2="610" y2="243.50"/>
+    <line x1="72" y1="189.67" x2="610" y2="189.67"/>
+    <line x1="72" y1="135.83" x2="610" y2="135.83"/>
+    <line x1="72" y1="82" x2="610" y2="82"/>
+  </g>
+
+  <g stroke="#374151" stroke-width="1.5">
+    <line x1="72" y1="82" x2="72" y2="405"/>
+    <line x1="72" y1="405" x2="610" y2="405"/>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="11" fill="#4b5563" text-anchor="end">
+    <text x="64" y="409">0</text>
+    <text x="64" y="355">20</text>
+    <text x="64" y="301">40</text>
+    <text x="64" y="247">60</text>
+    <text x="64" y="193">80</text>
+    <text x="64" y="139">100</text>
+    <text x="64" y="86">120</text>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="11" fill="#4b5563" text-anchor="middle">
+    <text x="72" y="425">4月</text>
+    <text x="161.67" y="425">5月</text>
+    <text x="251.33" y="425">6月</text>
+    <text x="341" y="425">7月</text>
+    <text x="430.67" y="425">8月</text>
+    <text x="520.33" y="425">9月</text>
+    <text x="610" y="425">10月</text>
+  </g>
+
+  <text x="341" y="458" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="12" fill="#374151">时间</text>
+  <text x="18" y="244" text-anchor="middle" transform="rotate(-90 18 244)" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="12" fill="#374151">累积记录总数</text>
+
+  <polyline points="72,378.08 161.67,364.63 251.33,337.71 341,216.58 430.67,192.36 520.33,135.83 610,119.67" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g fill="#ffffff" stroke="#2563eb" stroke-width="2">
+    <circle cx="72" cy="378.08" r="5"/>
+    <circle cx="161.67" cy="364.63" r="5"/>
+    <circle cx="251.33" cy="337.71" r="5"/>
+    <circle cx="341" cy="216.58" r="5"/>
+    <circle cx="430.67" cy="192.36" r="5"/>
+    <circle cx="520.33" cy="135.83" r="5"/>
+    <circle cx="610" cy="119.67" r="5"/>
+  </g>
+
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">
+    <text x="72" y="365">10</text>
+    <text x="161.67" y="352">15</text>
+    <text x="251.33" y="325">25</text>
+    <text x="341" y="204">70</text>
+    <text x="430.67" y="180">79</text>
+    <text x="520.33" y="124">100</text>
+    <text x="610" y="108">106</text>
+  </g>
+</svg>

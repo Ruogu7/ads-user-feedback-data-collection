@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">25个主要品牌类型比例折线图</title>
+  <desc id="desc">示例数据，25个品牌类型按比例从高到低排列，总比例约为100%。</desc>
+  <rect width="640" height="480" fill="#ffffff"/>
+  <style>
+    .title { font: 700 20px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #172033; }
+    .subtitle { font: 12px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #6b7280; }
+    .axis { font: 11px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #4b5563; }
+    .label { font: 10px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #374151; }
+    .grid { stroke: #e5e7eb; stroke-width: 1; }
+    .axis-line { stroke: #9ca3af; stroke-width: 1.2; }
+  </style>
+
+  <text x="320" y="32" text-anchor="middle" class="title">25个主要品牌类型比例</text>
+  <text x="320" y="52" text-anchor="middle" class="subtitle">示例数据｜按占比从高到低排列｜总比例约100%</text>
+
+  <!-- plot area: x=58..620, y=78..360 -->
+  <line x1="58" y1="78" x2="620" y2="78" class="grid"/>
+  <line x1="58" y1="134.4" x2="620" y2="134.4" class="grid"/>
+  <line x1="58" y1="190.8" x2="620" y2="190.8" class="grid"/>
+  <line x1="58" y1="247.2" x2="620" y2="247.2" class="grid"/>
+  <line x1="58" y1="303.6" x2="620" y2="303.6" class="grid"/>
+  <line x1="58" y1="360" x2="620" y2="360" class="axis-line"/>
+  <line x1="58" y1="78" x2="58" y2="360" class="axis-line"/>
+
+  <text x="50" y="82" text-anchor="end" class="axis">15%</text>
+  <text x="50" y="138" text-anchor="end" class="axis">12%</text>
+  <text x="50" y="194" text-anchor="end" class="axis">9%</text>
+  <text x="50" y="251" text-anchor="end" class="axis">6%</text>
+  <text x="50" y="307" text-anchor="end" class="axis">3%</text>
+  <text x="50" y="364" text-anchor="end" class="axis">0%</text>
+  <text x="18" y="220" text-anchor="middle" class="axis" transform="rotate(-90 18 220)">比例</text>
+
+  <polyline fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+    points="58,84 81.4,143.1 104.8,186.7 128.2,213.4 151.7,236.0 175.1,247.2 198.5,260.4 221.9,271.7 245.3,281.0 268.7,288.5 292.2,296.0 315.6,303.6 339.0,307.3 362.4,313.0 385.8,318.6 409.2,322.4 432.7,326.2 456.1,328.1 479.5,331.8 502.9,335.6 526.3,339.3 549.7,343.1 573.2,346.8 596.6,348.7 620,350.6"/>
+
+  <g fill="#ffffff" stroke="#2563eb" stroke-width="2">
+    <circle cx="58" cy="84" r="4"/><circle cx="81.4" cy="143.1" r="4"/><circle cx="104.8" cy="186.7" r="4"/>
+    <circle cx="128.2" cy="213.4" r="4"/><circle cx="151.7" cy="236" r="4"/><circle cx="175.1" cy="247.2" r="4"/>
+    <circle cx="198.5" cy="260.4" r="4"/><circle cx="221.9" cy="271.7" r="4"/><circle cx="245.3" cy="281" r="4"/>
+    <circle cx="268.7" cy="288.5" r="4"/><circle cx="292.2" cy="296" r="4"/><circle cx="315.6" cy="303.6" r="4"/>
+    <circle cx="339" cy="307.3" r="4"/><circle cx="362.4" cy="313" r="4"/><circle cx="385.8" cy="318.6" r="4"/>
+    <circle cx="409.2" cy="322.4" r="4"/><circle cx="432.7" cy="326.2" r="4"/><circle cx="456.1" cy="328.1" r="4"/>
+    <circle cx="479.5" cy="331.8" r="4"/><circle cx="502.9" cy="335.6" r="4"/><circle cx="526.3" cy="339.3" r="4"/>
+    <circle cx="549.7" cy="343.1" r="4"/><circle cx="573.2" cy="346.8" r="4"/><circle cx="596.6" cy="348.7" r="4"/><circle cx="620" cy="350.6" r="4"/>
+  </g>
+
+  <g class="label" text-anchor="end">
+    <text transform="translate(58 378) rotate(-55)">手机</text><text transform="translate(81.4 378) rotate(-55)">汽车</text><text transform="translate(104.8 378) rotate(-55)">家电</text><text transform="translate(128.2 378) rotate(-55)">服饰</text><text transform="translate(151.7 378) rotate(-55)">食品饮料</text>
+    <text transform="translate(175.1 378) rotate(-55)">化妆品</text><text transform="translate(198.5 378) rotate(-55)">运动鞋服</text><text transform="translate(221.9 378) rotate(-55)">母婴用品</text><text transform="translate(245.3 378) rotate(-55)">家居</text><text transform="translate(268.7 378) rotate(-55)">数码配件</text>
+    <text transform="translate(292.2 378) rotate(-55)">快消</text><text transform="translate(315.6 378) rotate(-55)">餐饮</text><text transform="translate(339 378) rotate(-55)">酒店</text><text transform="translate(362.4 378) rotate(-55)">银行</text><text transform="translate(385.8 378) rotate(-55)">保险</text>
+    <text transform="translate(409.2 378) rotate(-55)">航空</text><text transform="translate(432.7 378) rotate(-55)">医药</text><text transform="translate(456.1 378) rotate(-55)">珠宝</text><text transform="translate(479.5 378) rotate(-55)">奢侈品</text><text transform="translate(502.9 378) rotate(-55)">办公用品</text>
+    <text transform="translate(526.3 378) rotate(-55)">教育</text><text transform="translate(549.7 378) rotate(-55)">出行服务</text><text transform="translate(573.2 378) rotate(-55)">互联网平台</text><text transform="translate(596.6 378) rotate(-55)">游戏</text><text transform="translate(620 378) rotate(-55)">其他</text>
+  </g>
+
+  <g class="axis" text-anchor="middle">
+    <text x="58" y="454">1</text><text x="175.1" y="454">6</text><text x="292.2" y="454">11</text><text x="409.2" y="454">16</text><text x="526.3" y="454">21</text><text x="620" y="454">25</text>
+  </g>
+  <text x="340" y="474" text-anchor="middle" class="axis">品牌类型排名</text>
+</svg>
