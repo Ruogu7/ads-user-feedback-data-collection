@@ -1,0 +1,62 @@
+erDiagram
+    survey_version ||--o{ survey_question : contains
+    survey_version ||--o{ survey_response : publishes
+    survey_response ||--o{ survey_answer : has
+    survey_question ||--o{ survey_answer : defines
+    survey_response ||--o{ risk_event : reports
+    survey_response ||--o| followup_contact : optionally_has
+    survey_response ||--o{ data_review_log : records
+    team_member ||--o{ admin_user : includes
+    admin_user ||--o{ export_job : creates
+    survey_version {
+      BIGINT version_id PK
+      VARCHAR version_code
+      VARCHAR status
+    }
+    survey_question {
+      BIGINT question_id PK
+      BIGINT version_id FK
+      VARCHAR question_code
+    }
+    survey_response {
+      VARCHAR record_id PK
+      BIGINT version_id FK
+      DATETIME submitted_at
+      VARCHAR validity_status
+      VARCHAR city
+      VARCHAR brand_name
+    }
+    survey_answer {
+      BIGINT answer_id PK
+      VARCHAR record_id FK
+      BIGINT question_id FK
+    }
+    risk_event {
+      BIGINT risk_event_id PK
+      VARCHAR record_id FK
+      VARCHAR severity
+    }
+    followup_contact {
+      BIGINT contact_id PK
+      VARCHAR record_id FK
+      VARBINARY email_ciphertext
+    }
+    data_review_log {
+      BIGINT review_id PK
+      VARCHAR record_id FK
+      VARCHAR action
+    }
+    team_member {
+      BIGINT team_id PK
+      VARCHAR team_name
+    }
+    admin_user {
+      BIGINT admin_id PK
+      BIGINT team_id FK
+      VARCHAR account
+    }
+    export_job {
+      BIGINT export_job_id PK
+      BIGINT created_by FK
+      VARCHAR export_scope
+    }
