@@ -84,6 +84,13 @@ h3 { font-size: 16px; margin-bottom: 8px; }
 .admin-section .panel h2:first-child { margin-top: 0; }
 .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .team-grid article { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #fbfdff; }
+.team-source h2 { margin: 22px 0 10px; }
+.team-source h2:first-of-type { margin-top: 14px; }
+.team-duty-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.team-duty-grid article { padding: 14px; border: 1px solid var(--line); border-radius: 10px; background: #fbfdff; }
+.team-duty-grid h3 { margin: 0 0 7px; color: var(--navy); font-size: 15px; }
+.team-table td:last-child { white-space: normal; min-width: 260px; }
+@media (max-width: 800px) { .team-duty-grid { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .team-grid { grid-template-columns: 1fr; } }
 @keyframes rise { from { opacity: .55; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 .question { padding: 20px 0; border-bottom: 1px solid #edf0f4; }
