@@ -18,15 +18,16 @@
   <g transform="translate(60 365)"><rect width="300" height="135" class="box"/><rect width="300" height="34" class="head"/><text x="15" y="23" class="ht">admin_user｜管理员</text><text x="15" y="57" class="txt">PK  admin_id</text><text x="15" y="78" class="txt">FK  team_id</text><text x="15" y="99" class="txt">account · role_code</text><text x="15" y="120" class="txt">status</text></g>
   <g transform="translate(60 535)"><rect width="300" height="110" class="box"/><rect width="300" height="34" class="head"/><text x="15" y="23" class="ht">export_job｜导出任务</text><text x="15" y="57" class="txt">PK  export_job_id</text><text x="15" y="78" class="txt">FK  created_by</text><text x="15" y="99" class="txt">export_scope · status</text></g>
 
-  <path d="M660 238 L660 360" class="line" marker-end="url(#arrow)"/><text x="675" y="305" class="fk">version_id</text>
-  <path d="M810 180 L900 180" class="line" marker-end="url(#arrow)"/><text x="825" y="168" class="fk">version_id</text>
-  <path d="M860 430 L930 430" class="line" marker-end="url(#arrow)"/><text x="870" y="418" class="fk">record_id</text>
-  <path d="M860 510 L930 630" class="line" marker-end="url(#arrow)"/><text x="870" y="575" class="fk">record_id</text>
-  <path d="M675 580 L675 690" class="line" marker-end="url(#arrow)"/><text x="690" y="642" class="fk">record_id</text>
-  <path d="M490 515 L410 720" class="line" marker-end="url(#arrow)"/><text x="425" y="620" class="fk">record_id</text>
-  <path d="M360 425 L430 425" class="line" marker-end="url(#arrow)"/><text x="370" y="413" class="fk">team_id</text>
-  <path d="M210 500 L210 535" class="line" marker-end="url(#arrow)"/><text x="225" y="525" class="fk">admin_id</text>
-  <path d="M360 180 L510 180" class="line" marker-end="url(#arrow)"/><text x="405" y="168" class="fk">version_id</text>
+  <path d="M660 238 L660 360" class="line" marker-end="url(#arrow)"/><text x="675" y="305" class="fk">survey_version.version_id → survey_response.version_id</text>
+  <path d="M810 180 L900 180" class="line" marker-end="url(#arrow)"/><text x="825" y="168" class="fk">version_id → version_id</text>
+  <path d="M860 430 L930 430" class="line" marker-end="url(#arrow)"/><text x="870" y="418" class="fk">record_id → record_id</text>
+  <path d="M860 510 L930 630" class="line" marker-end="url(#arrow)"/><text x="870" y="575" class="fk">record_id → record_id</text>
+  <path d="M675 580 L675 690" class="line" marker-end="url(#arrow)"/><text x="690" y="642" class="fk">record_id → record_id（唯一）</text>
+  <path d="M490 515 L410 720" class="line" marker-end="url(#arrow)"/><text x="425" y="620" class="fk">record_id → record_id</text>
+  <path d="M360 425 L430 425" class="line" marker-end="url(#arrow)"/><text x="370" y="413" class="fk">team_id → team_id</text>
+  <path d="M210 500 L210 535" class="line" marker-end="url(#arrow)"/><text x="225" y="525" class="fk">admin_id → created_by</text>
+  <path d="M360 180 L510 180" class="line" marker-end="url(#arrow)"/><text x="405" y="168" class="fk">version_id → version_id</text>
+  <path d="M1080 255 L1080 365" class="line" marker-end="url(#arrow)"/><text x="1095" y="320" class="fk">question_id → question_id</text>
 
-  <rect x="55" y="885" width="1290" height="55" class="card"/><text x="75" y="910" class="ct">关系说明：</text><text x="155" y="910" class="legend">1—N：一条主记录对应多条明细；1—0..1：可选的一条回访联系方式。最终统计导出以 validity_status='valid' 的 survey_response 为基础。</text><text x="75" y="929" class="legend">敏感联系方式只保存在 followup_contact，使用加密字段，不与主答卷宽表一并导出。</text>
+  <rect x="55" y="850" width="1290" height="90" class="card"/><text x="75" y="875" class="ct">Key 标识与关联规则：</text><text x="75" y="895" class="legend">PK = 主键；FK = 外键；UK = 唯一键。关联写法为“父表 PK → 子表 FK”，例如 survey_response.record_id → risk_event.record_id。</text><text x="75" y="913" class="legend">1—N：一条主记录对应多条明细；1—0..1：可选的一条回访联系方式。最终统计导出以 validity_status='valid' 的 survey_response 为基础。</text><text x="75" y="931" class="legend">敏感联系方式只保存在 followup_contact，使用加密字段，不与主答卷宽表一并导出。</text>
 </svg>
